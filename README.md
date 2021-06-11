@@ -19,6 +19,9 @@ Book reviews can be added with th `%r` and `%e` tags.
 `%r` is the reviewer while `%e` is the reviewed work.
 A reviewer must be set, otherwise whole line will not be printed.
 
+### Thesis
+To reference a thesis, set City (`%C`) to the departement and Issuer (`%I`) to the university.
+
 ### Social Media Content
 For ocial media content, the Issuer 9(`%I`)can be set to the platform, and Other (`%O`) to the url.
 
