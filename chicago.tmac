@@ -1,0 +1,97 @@
+.R1
+sort
+label "(A|Q) ', ' (D.y|D)"
+.R2
+
+.de ref*specs
+.if \\n[#PRINT_STYLE]=1 \{\
+.   char '     \[aq]
+.   char \[oq] \[aq]
+.\}
+.\" Internet site - type 0
+.ds ref*spec!0 i Q A D T2 w V O n
+.ds ref*spec!1 i Q A D T2 J O V N S P C I n
+.ds ref*spec!2 i Q A D T1 C I n
+.ds ref*spec!3 i Q A D T2 B E P C I n
+.\" Tech report - type 4
+.ds ref*spec!4 i Q A m p T1 R G O C I D P n
+.\" Magazine or newspaper article - type 5
+.ds ref*spec!5 i Q A D T1 I V n O n
+..
+
+.de ref*add-A
+.ref*field A "" "" "" ""
+..
+.de ref*add-D
+.ref*field D "."
+..
+.de ref*add-T2
+.ref*field T "." "\[lq]" "\[rq]"
+..
+.de ref*add-T1
+.ref*field T "." "\E*[IT]" \E*[ref*restore-ss]
+..
+.de ref*add-J
+.ref*field J "" "\E*[IT]" \E*[ref*restore-ss]
+..
+.de ref*add-V
+.ref*field V "" "" "" ","
+..
+.de ref*add-N
+.ref*field N "" "no. " "" " :"
+..
+.de ref*add-S
+.ref*field S "" "(" ")" ""
+..
+.de ref*add-P
+.ref*field P "" "" "" "."
+..
+.de ref*add-B
+.ref*field B " in" "\E*[IT]" \E*[ref*restore-ss] ","
+..
+.de ref*add-E
+.ref*field E "" "edited by " "" ","
+..
+.de ref*add-C
+.ref*field C "" "" "" ":"
+..
+.de ref*add-I
+.ref*field I "" "" "" ""
+..
+.de ref*add-O
+.ref*field O "" "" "" ""
+..
+.de ref*add-w
+.ref*field w "" "\E*[IT]" \E*[ref*restore-ss]  ","
+..
+.de ][
+.nr ref*type \\$1
+.if \\n[ref*type]=3 \{\
+.   if !'\\*([R'' \{\
+.      nr ref*type 4
+.      ds ref*spec!4 i Q A m p T2 B R O C I D P n
+.   \}
+.   if !'\\*([G'' \{\
+.      nr ref*type 4
+.      ds ref*spec!4 i A m p T2 B G O C I D P O n
+.   \}
+.\}
+.if r [T \{\
+.   als [T1 [T
+.   als [T2 [T
+.\}
+.ie d ref*spec!\\n[ref*type] .ref*build \\*[ref*spec!\\n[ref*type]]
+.el \{\
+.   @error unknown reference type '\\n[ref*type]'
+.   ref*build \\*[ref*spec!0]
+.\}
+.if !\\n[.hy]=0 \{\
+.nr #RESTORE_HY \\n[.hy]
+.if !r#REF_HY .nh
+.\}
+.ref*print
+.if !\\n[#RESTORE_HY]=0 .hy \\n[#RESTORE_HY]
+.rr #RESTORE_HY
+.rm ref*string
+.rm [F [T1 [T2
+..
