@@ -19,6 +19,9 @@ Book reviews can be added with th `%r` and `%e` tags.
 `%r` is the reviewer while `%e` is the reviewed work.
 A reviewer must be set, otherwise whole line will not be printed.
 
+### Interviews
+The Interviewr can be set with `%v`, Other (`%O`) should be set to "program,pulication,date,url"
+
 ### Thesis
 To reference a thesis, set City (`%C`) to the departement and Issuer (`%I`) to the university.
 
