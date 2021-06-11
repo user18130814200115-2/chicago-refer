@@ -1,22 +1,19 @@
-.R1
-sort
-label "(A|Q) ', ' (D.y|D)"
-.R2
-
 .de ref*specs
 .if \\n[#PRINT_STYLE]=1 \{\
 .   char '     \[aq]
 .   char \[oq] \[aq]
 .\}
-.\" Internet site - type 0
-.ds ref*spec!0 i Q A D T2 w V O n
+.ds ref*spec!0 i Q A D T2 r w V O n
 .ds ref*spec!1 i Q A D T2 J O V N S P C I n
-.ds ref*spec!2 i Q A D T1 C I n
+.ds ref*spec!2 i Q A D T1 r C I n
 .ds ref*spec!3 i Q A D T2 B E P C I n
-.\" Tech report - type 4
 .ds ref*spec!4 i Q A m p T1 R G O C I D P n
-.\" Magazine or newspaper article - type 5
 .ds ref*spec!5 i Q A D T1 I V n O n
+..
+
+.de ref*add-r
+.ref*field r "" "review of \E*[IT]" \E*[ref*restore-ss] ","
+.ref*field e "" "by " "" "."
 ..
 
 .de ref*add-A
@@ -95,3 +92,4 @@ label "(A|Q) ', ' (D.y|D)"
 .rm ref*string
 .rm [F [T1 [T2
 ..
+
