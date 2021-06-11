@@ -31,3 +31,14 @@ For ocial media content, the Issuer 9(`%I`)can be set to the platform, and Other
 ## Contributions
 Conntributions and issues are extremely welcome.
 References are often complex and if my system has any holes in it, please feel free to either fix them and make a PR or submit an issue.
+
+# LISENCE
+This Macro set is free software, you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Includes code from the `mom` macros
+Copyright (C) 2002-2018  Free Software Foundation, Inc.
+ Written by Peter Schaffter <peter@schaffter.ca>
+ PDF integration contributed by Deri James <deri.james@chuzzlewit.co.uk>
