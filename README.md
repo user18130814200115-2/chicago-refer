@@ -14,9 +14,13 @@ I have only tested this with the `mom` macro set.
 Currently, if you want a news article, you need a `%w` section in your bibliography file to indicate the paper.
 This is because refer defaults to using `ref*spec 2` if an Issuer (`%I`) is set.
 
+### Book reviews
 Book reviews can be added with th `%r` and `%e` tags.  
 `%r` is the reviewer while `%e` is the reviewed work.
 A reviewer must be set, otherwise whole line will not be printed.
+
+### Social Media Content
+For ocial media content, the Issuer 9(`%I`)can be set to the platform, and Other (`%O`) to the url.
 
 ## Contributions
 Conntributions and issues are extremely welcome.
