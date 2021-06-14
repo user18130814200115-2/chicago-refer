@@ -11,8 +11,10 @@ Copyright (C) 2002-2018  Free Software Foundation, Inc.
 ..
 
 .R1
-accumulate
-label "(A|Q) ', ' (D.y|D)"
+sort A+
+label "(@|Q) ', ' (D.y|D)"
+bracket-label " (" ) "; "
+database /home/user/.local/share/groff/bibliography.groff
 .R2
 .de ref*specs
 .if \\n[#PRINT_STYLE]=1 \{\
