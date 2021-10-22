@@ -9,7 +9,6 @@ Copyright (C) 2002-2018  Free Software Foundation, Inc.
  Written by Peter Schaffter <peter@schaffter.ca>
  PDF integration contributed by Deri James <deri.james@chuzzlewit.co.uk>
 ..
-
 .R1
 sort A+
 label "(@|Q) ', ' (D.y|D)"
@@ -22,14 +21,17 @@ reverse A1
 .   char '     \[aq]
 .   char \[oq] \[aq]
 .\}
-.ds ref*spec!0 i Q A D T2 v r w V O n
-.ds ref*spec!1 i Q A D T2 J O V N S P C I n
-.ds ref*spec!2 i Q A D T1 r C I O n
+.ds ref*spec!0 i Q A D T2 v r w E V O n
+.ds ref*spec!1 i Q A D T2 J O V N E S P C I n
+.ds ref*spec!2 i Q A D T1 r C I O E n
 .ds ref*spec!3 i Q A D T2 B E P C I n
-.ds ref*spec!4 i Q A m p T1 R G O C I D P n
-.ds ref*spec!5 i Q A D T1 v I n O n
+.ds ref*spec!4 i Q A m p T1 R G E O C I D P n
+.ds ref*spec!5 i Q A D T1 v I E n O n
 ..
 
+.de ref*add-E
+.ref*field E "" "edited by " "" "."
+..
 .de ref*add-v
 .ref*field v "" "interview by "
 ..
@@ -37,7 +39,6 @@ reverse A1
 .ref*field r "" "review of \E*[IT]" \E*[ref*restore-ss] ","
 .ref*field e "" "by " "" "."
 ..
-
 .de ref*add-A
 .ref*field A "" "" "" ""
 ..
@@ -45,10 +46,10 @@ reverse A1
 .ref*field D "."
 ..
 .de ref*add-T2
-.ref*field T "." "\[lq]" "\[rq]"
+.ref*field T "." "\[lq]" "\[rq]" "."
 ..
 .de ref*add-T1
-.ref*field T "." "\E*[IT]" \E*[ref*restore-ss]
+.ref*field T "." "\E*[IT]" \E*[ref*restore-ss] "."
 ..
 .de ref*add-J
 .ref*field J "" "\E*[IT]" \E*[ref*restore-ss]
@@ -57,13 +58,13 @@ reverse A1
 .ref*field V "" "" "" ","
 ..
 .de ref*add-N
-.ref*field N "" "no. " "" " :"
+.ref*field N "" "no. " "" ":"
 ..
 .de ref*add-S
 .ref*field S "" "(" ")" ""
 ..
 .de ref*add-P
-.ref*field P "" "" "" "."
+.ref*field P "" "" "" ""
 ..
 .de ref*add-B
 .ref*field B " in" "\E*[IT]" \E*[ref*restore-ss] ","
@@ -114,4 +115,3 @@ reverse A1
 .rm ref*string
 .rm [F [T1 [T2
 ..
-
