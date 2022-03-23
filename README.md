@@ -11,7 +11,7 @@ You can also use [my groff module system](https://github.com/user18130814200115-
 
 You will need to manually set the GNU refer settings, either from the comandline or with a
 .R1/.R2 block.
-You can output the reccomened block to the commandline with the call `.chicago`.
+You can output the recommended block to the commandline with the call `.chicago`.
 ```
 [chicago]: please manually add a refer block containing the following info:
 .R1
