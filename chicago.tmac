@@ -9,13 +9,6 @@ Copyright (C) 2002-2018  Free Software Foundation, Inc.
  Written by Peter Schaffter <peter@schaffter.ca>
  PDF integration contributed by Deri James <deri.james@chuzzlewit.co.uk>
 ..
-.R1
-sort A+
-label "(@|Q) ', ' (D.y|D)"
-bracket-label " (" ) "; "
-database /home/user/.local/share/groff/bibliography.groff
-reverse A1
-.R2
 .de ref*specs
 .if \\n[#PRINT_STYLE]=1 \{\
 .   char '     \[aq]
@@ -114,4 +107,16 @@ reverse A1
 .rr #RESTORE_HY
 .rm ref*string
 .rm [F [T1 [T2
+..
+.de chicago
+.tm1 [chicago]: please manually add a refer block containing the following info:
+.tm1 .R1
+.tm1 label "(A.n|Q) ', ' (D.y|D)"
+.tm1 bracket-label " (" ")" ", "
+.tm1 join-authors ", and " ", " ", and "
+.tm1 move-punctuation
+.tm1 reverse A1
+.tm1 sort A1Q1T1B1E1
+.tm1 database [PATH_TO_DATABASE]
+.tm1 .R2
 ..
